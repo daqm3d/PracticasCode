@@ -1,0 +1,67 @@
+/* * Estilos Variables */
+@import url(css/variables.css);
+/* # clases globales */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--estilo-tex);
+  .flex-colum {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* # configuracion de ventanas  */
+.container {
+  margin: 5px auto;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  & #formulario,
+  #pintarNotas {
+    width: 90%;
+  }
+  h1 {
+    margin: 0.5rem auto;
+  }
+}
+
+#formulario {
+  & input[type='text'],
+  button,
+  textarea {
+    padding: 10px;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1mm ridge var(--color-bordes);
+    &:hover {
+      transition: box-shadow;
+      box-shadow: 0 0 0 2px var(--tex-prime), 0 0 0 4px var(--color-boton);
+    }
+  }
+  button {
+    background: var(--color-boton);
+    color: var(--tex-prime);
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+#pintarNotas {
+  & .tarjeta {
+    display: flex;
+    padding: 10px;
+    background: var(--color-aler);
+    margin-top: 0.5rem;
+    align-items: center;
+    & .tituloNota {
+      cursor: pointer;
+      flex-grow: 1;
+    }
+  }
+  .contenidoNota {
+    border-radius: 0 0 10px 10px;
+    background: var(--color-aler2);
+    padding: 10px;
+  }
+}

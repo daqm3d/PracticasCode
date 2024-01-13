@@ -1,0 +1,18 @@
+:root {
+  /*  ? Estilos de texto */
+  --tex-prime: #fff;
+  --tex-contras: #ccc;
+  /*   --tex-input: #666666;
+  --tex-select: #aeaeae;
+  --tex-error: #fd2f2f;
+  --tex-exito: rgb(107, 228, 107);
+  --tex-tercer: #000; */
+
+  /* ? Etilos de fondos */
+  --color-bordes: rgba(0, 0, 0, 0.5);
+  --color-boton: #2271b1;
+  --color-botonHover: #2271b1;
+  --color-aler: rgb(255, 243, 131);
+  --color-aler2: rgb(250, 244, 192);
+  --estilo-tex: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+}

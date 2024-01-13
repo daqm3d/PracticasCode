@@ -1,0 +1,18 @@
+version: '2.2'
+
+services:
+  web:
+    container_name: Notas
+    #restart: always
+    image: php:5.6-apache
+    #build: ./.docker
+    ports:
+      - 8080:80
+    networks:
+      - overlay
+    volumes:
+      - /var/Docker/Notas:/var/www/html/Notos
+      - ./.docker/http/vhost.conf:/etc/apache2/sites-available/000-default.conf
+
+networks:
+  overlay:
