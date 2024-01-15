@@ -2,46 +2,63 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Notas</title>
   </head>
   <body>
     <div class="container flex-colum">
       <h1>Notas App</h1>
+      <section id="alerNotas">
+        <h2><span>!</span>error</h2>
+      </section>
       <form id="formulario" class="flex-colum">
-        <input type="text" name="titulo" placeholder="Titulo" />
         <input
           type="text"
-          name="contenido"
-          placeholder="Ingrese el contenido"
+          name="titulo"
+          placeholder="Titulo"
+          required
         />
         <textarea
           name="contenido"
           rows="3"
           placeholder="Ingrese el contenido"
         ></textarea>
-        <button disabled="disabled" type="submit">Guardar</button>
+        <button type="submit">Guardar</button>
       </form>
 
       <section id="pintarNotas">
-        <details open="nota">
+        <details name="nota">
           <summary class="tarjeta">
             <h1 class="tituloNota"><span><></span>Titulo</h1>
             <div>
               <button>Tarea Resuelta</button>
               <button>Editar</button>
               <button>Archivar</button>
-              <button class="btn btn-danger">Eliminar</button>
+              <button>Eliminar</button>
             </div>
           </summary>
-          <p class="contenidoNota">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere fuga
-            commodi nisi autem ab quae at natus consequuntur modi vel, cum, hic
-            earum voluptates velit id nobis fugiat odio minima!
-          </p>
+          <p class="contenidoNota"></p>
         </details>
       </section>
+
+      <template id="templateNota">
+        <details name="nota">
+          <summary class="tarjeta">
+            <h1 class="tituloNota"><span><></span>Titulo</h1>
+            <div>
+              <button>Tarea Resuelta</button>
+              <button>Editar</button>
+              <button>Archivar</button>
+              <button>Eliminar</button>
+            </div>
+          </summary>
+          <p class="contenidoNota"></p>
+        </details>
+      </template>
     </div>
     <script src="js/app.js"></script>
   </body>
