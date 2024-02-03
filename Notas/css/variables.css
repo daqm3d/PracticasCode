@@ -2,16 +2,27 @@
   /*  ? Estilos de texto */
   --tex-boton: #fff;
   --tex-aler: #b92424;
-  --tex-exito: rgb(107, 228, 107);
 
   /* ? Etilos de fondos */
-  --color-bordes: rgba(0, 0, 0, 0.5);
+  --color-bordes: #00000080;
   --color-boton: #2271b1;
-  --color-botonHover: #2271b1;
-  --color-nota: rgb(255, 243, 131);
+  --color-nota: #fff383;
+  --color-notas: #daa107;
+
   --color-notaConten: rgb(250, 244, 192);
+  --color-resuelto: #999999;
+  --color-resueltoConten: #b3b1b1;
   --color-aler: #fac8c8;
   --color-exito: rgb(107, 228, 107);
   --estilo-tex: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
     sans-serif;
+
+  /* ? SVG ICONS */
+  --svgFavicon: url(./css/SVG/favicon.svg);
+  --svgResuelto: url(./css/SVG/resuelto.svg);
+  --svgRegresar: url(./css/SVG/regresar.svg);
+  --svgEditar: url(./css/SVG/editar.svg);
+  --svgArchivar: url(./css/SVG/archivar.svg);
+  --svgEliminar: url(./css/SVG/eliminar.svg);
+  --svgSinNotas: url(./css/SVG/sinNotas.svg);
 }

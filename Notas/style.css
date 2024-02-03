@@ -1,10 +1,22 @@
 /* * Estilos Variables */
-@import url(css/variables.css);
+@import url(./css/variables.css);
+
 /* # clases globales */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
   font-family: var(--estilo-tex);
+  & h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  & p {
+    text-wrap: pretty;
+  }
   .flex-colum {
     display: flex;
     flex-direction: column;
@@ -12,28 +24,47 @@
 }
 
 /* # configuracion de ventanas  */
-.container {
-  margin: 5px auto;
-  align-items: center;
-  width: 100%;
-  max-width: 800px;
-  & #formulario,
-  #pintarNotas {
-    width: 90%;
-  }
-  h1 {
-    margin: 0.5rem auto;
-  }
-  & #alerNotas {
-    background: var(--color-aler);
-    padding-block: 10px;
-    margin-bottom: 1rem;
-    width: 90%;
-    border-radius: 0.5rem;
+body {
+  /* background-image: url(./css/img/primari.svg);*/
 
-    & h2 {
-      color: var(--tex-aler);
-      margin-inline: 10px;
+  .container {
+    margin: 5px auto;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    & #formulario,
+    #pintarNotas {
+      width: 90%;
+    }
+    & h1#titulo {
+      display: flex;
+      flex-direction: row;
+      margin: 1rem auto;
+      align-items: center;
+      & #favicon {
+        width: 3rem;
+        height: 3rem;
+        background-image: var(--svgFavicon);
+        margin: 0.5rem 2rem;
+      }
+    }
+    & #alerNotas {
+      background: var(--color-aler);
+      padding-block: 10px;
+      margin-bottom: 1rem;
+      width: 90%;
+      border-radius: 0.5rem;
+      display: none;
+      & h2 {
+        color: var(--tex-aler);
+        margin-inline: 10px;
+        & span {
+          margin: auto 10px;
+        }
+      }
+    }
+    .boton {
+      cursor: pointer;
     }
   }
 }
@@ -47,21 +78,45 @@
     border-radius: 0.5rem;
     border: 1px ridge var(--color-bordes);
 
-    &:hover {
+    &:hover,
+    &:focus {
       box-shadow: 0 0 0 2px var(--tex-boton),
         0 0 0 4px var(--color-boton);
-      transition: all 11s box-shadow;
+      transition: box-shadow 0.3s ease;
     }
   }
   button {
     background: var(--color-boton);
     color: var(--tex-boton);
     border: 0;
-    cursor: pointer;
   }
 }
 
 #pintarNotas {
+  & #sinNotas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    & h3 {
+      background: var(--color-exito);
+      background: var(--color-resueltoConten);
+      width: 100%;
+      border: 1px solid;
+      border-radius: 0.5rem;
+      margin: 10px;
+      padding: 10px;
+    }
+    & spam {
+      margin-top: 10px;
+      width: 60vw;
+      height: 60vw;
+      max-width: 340px;
+      max-height: 300px;
+      background: no-repeat;
+      background-image: url(--svgSinNotas);
+    }
+  }
   & .tarjeta {
     display: flex;
     padding: 10px;
@@ -69,13 +124,62 @@
     margin-top: 0.5rem;
     align-items: center;
     & .tituloNota {
-      cursor: pointer;
       flex-grow: 1;
     }
   }
-  .contenidoNota {
-    border-radius: 0 0 10px 10px;
-    background: var(--color-notaConten);
-    padding: 10px;
+  details[name='nota'] {
+    .ResueltoTrue {
+      background: var(--color-resuelto);
+      opacity: 50%;
+      transition: all 11s ease-in-out 0.5s;
+      & h1 {
+        display: inline-block;
+        text-decoration: line-through var(--tex-aler) 0.3rem;
+      }
+      + .contenidoNota {
+        background: var(--color-resueltoConten);
+        opacity: 40%;
+      }
+    }
+    .ResueltoFalse {
+      background: var(--color-nota);
+    }
+    .contenidoNota {
+      border-radius: 0 0 10px 10px;
+      background: var(--color-notaConten);
+      padding: 10px;
+    }
+    #logica {
+      display: flex;
+      flex-direction: row;
+      & span {
+        width: 7vw;
+        height: 7vw;
+        max-width: 40px;
+        max-height: 40px;
+        margin: auto 0.5vw;
+        filter: contrast(100%);
+      }
+      :is(.tarjeta.ResueltoTrue span:first-child) {
+        filter: brightness(100%);
+        opacity: 100%;
+      }
+
+      #Resuelto {
+        background-image: var(--svgResuelto);
+      }
+      :is(.tarjeta.ResueltoTrue #Resuelto) {
+        background-image: var(--svgRegresar);
+      }
+      #Editar {
+        background-image: var(--svgEditar);
+      }
+      #Archivar {
+        background-image: var(--svgArchivar);
+      }
+      #Eliminar {
+        background-image: var(--svgEliminar);
+      }
+    }
   }
 }
