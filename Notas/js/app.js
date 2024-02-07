@@ -2,7 +2,7 @@ import {
   agregarNota,
   monstrarNotas,
 } from './modulos/funcionGlobal.js';
-import { botonEven } from './modulos/notasEven.js';
+import { botonEvent } from './modulos/notasEvent.js';
 
 const aler = document.querySelector('#alerNotas');
 const formulario = document.querySelector('#formulario');
@@ -19,7 +19,7 @@ formulario.addEventListener('submit', (e) => {
   if (!titulo.trim()) {
     aler.querySelector(
       'h2'
-    ).innerHTML = `<span>!</span> Se requiere un titulo para crear la nota`;
+    ).innerHTML = `<span>!</span>Se requiere un titulo para crear la nota`;
     aler.style.display = 'inherit';
     return;
   }
@@ -33,7 +33,7 @@ formulario.addEventListener('submit', (e) => {
 // # Funciones de logicaNotas
 pintarNotas.addEventListener('click', (e) => {
   console.log(e);
-  botonEven(e, BD);
+  botonEvent(e, BD);
   e.stopPropagation();
 });
 

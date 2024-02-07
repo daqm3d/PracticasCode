@@ -5,12 +5,9 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
-  font: 1rem var(--font-segundari);
+  font-family: var(--font-segundari);
 
   margin: 0;
-  padding: 0;
-  & h1,
-  h2,
   h3,
   h4 {
     text-wrap: balance;
@@ -36,30 +33,39 @@ body {
       width: 90%;
     }
     & h1#titulo {
-      font: 2rem var(--font-primari);
       display: flex;
       flex-direction: row;
+      font: 3rem var(--font-primari);
+      width: 100%;
+      font-weight: 600;
+      justify-content: space-evenly;
       margin: 1rem auto;
       align-items: center;
-      & #favicon {
-        width: 3rem;
-        height: 3rem;
+      text-align: center;
+      & span#favicon {
         background-image: var(--svgFavicon);
-        margin: 0.5rem 2rem;
+        background-repeat: no-repeat;
+        width: 15vw;
+        height: 15vw;
+        max-width: 75px;
+        max-height: 75px;
+      }
+      h1#titulo:hover {
+        transform: rotate(20deg);
       }
     }
     & #alerNotas {
       background: var(--color-aler);
+      justify-content: center;
       padding-block: 10px;
       margin-bottom: 1rem;
-      width: 90%;
       border-radius: 0.5rem;
+      width: 90%;
       display: none;
       & h2 {
         color: var(--tex-aler);
-        margin-inline: 10px;
         & span {
-          margin: auto 10px;
+          margin-right: 5px;
         }
       }
     }
@@ -78,8 +84,8 @@ body {
     border-radius: 0.5rem;
     border: 1px ridge var(--color-bordes);
     font-weight: 900;
-    letter-spacing: 0.5rem;
-    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+    font-size: 1.5rem;
     &:hover,
     &:focus {
       box-shadow: 0 0 0 2px var(--tex-boton),
@@ -115,7 +121,6 @@ body {
       height: 60vw;
       max-width: 340px;
       max-height: 300px;
-      background: no-repeat;
       background-image: url(--svgSinNotas);
     }
   }
@@ -132,6 +137,7 @@ body {
   details[name='nota'] {
     * {
       font-size: 2rem;
+      font-weight: 100;
     }
     .ResueltoTrue {
       background: var(--color-resuelto);
@@ -165,7 +171,6 @@ body {
         max-width: 40px;
         max-height: 40px;
         margin: auto 0.5vw;
-        filter: contrast(100%);
       }
       :is(.tarjeta.ResueltoTrue span:first-child) {
         filter: brightness(100%);
