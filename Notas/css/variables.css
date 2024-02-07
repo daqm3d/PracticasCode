@@ -1,5 +1,15 @@
+@font-face {
+  src: url('./font/RubikDoodleShadow-Regular.ttf');
+  font-family: 'RubikDood';
+}
+@font-face {
+  src: url('./font/Stickynotes-ywLPd.otf');
+  font-family: 'Stickynotes';
+}
 :root {
   /*  ? Estilos de texto */
+  --font-primari: 'RubikDood';
+  --font-segundari: 'Stickynotes';
   --tex-boton: #fff;
   --tex-aler: #b92424;
 
@@ -18,11 +28,11 @@
     sans-serif;
 
   /* ? SVG ICONS */
-  --svgFavicon: url(./css/SVG/favicon.svg);
-  --svgResuelto: url(./css/SVG/resuelto.svg);
-  --svgRegresar: url(./css/SVG/regresar.svg);
-  --svgEditar: url(./css/SVG/editar.svg);
-  --svgArchivar: url(./css/SVG/archivar.svg);
-  --svgEliminar: url(./css/SVG/eliminar.svg);
-  --svgSinNotas: url(./css/SVG/sinNotas.svg);
+  --svgFavicon: url('./css/SVG/favicon.svg');
+  --svgResuelto: url('./css/SVG/resuelto.svg');
+  --svgRegresar: url('./css/SVG/regresar.svg');
+  --svgEditar: url('./css/SVG/editar.svg');
+  --svgArchivar: url('./css/SVG/archivar.svg');
+  --svgEliminar: url('./css/SVG/eliminar.svg');
+  --svgSinNotas: url('./css/SVG/sinNotas.svg');
 }

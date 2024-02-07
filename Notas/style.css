@@ -1,13 +1,14 @@
 /* * Estilos Variables */
-@import url(./css/variables.css);
+@import url('./css/variables.css');
 
 /* # clases globales */
 * {
   box-sizing: border-box;
+  text-decoration: none;
+  font: 1rem var(--font-segundari);
+
   margin: 0;
   padding: 0;
-  text-decoration: none;
-  font-family: var(--estilo-tex);
   & h1,
   h2,
   h3,
@@ -25,8 +26,6 @@
 
 /* # configuracion de ventanas  */
 body {
-  /* background-image: url(./css/img/primari.svg);*/
-
   .container {
     margin: 5px auto;
     align-items: center;
@@ -37,6 +36,7 @@ body {
       width: 90%;
     }
     & h1#titulo {
+      font: 2rem var(--font-primari);
       display: flex;
       flex-direction: row;
       margin: 1rem auto;
@@ -77,7 +77,9 @@ body {
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
     border: 1px ridge var(--color-bordes);
-
+    font-weight: 900;
+    letter-spacing: 0.5rem;
+    font-size: 1.2rem;
     &:hover,
     &:focus {
       box-shadow: 0 0 0 2px var(--tex-boton),
@@ -128,6 +130,9 @@ body {
     }
   }
   details[name='nota'] {
+    * {
+      font-size: 2rem;
+    }
     .ResueltoTrue {
       background: var(--color-resuelto);
       opacity: 50%;
@@ -145,6 +150,8 @@ body {
       background: var(--color-nota);
     }
     .contenidoNota {
+      font-size: 1.5rem;
+
       border-radius: 0 0 10px 10px;
       background: var(--color-notaConten);
       padding: 10px;
