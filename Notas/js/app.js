@@ -8,7 +8,7 @@ const aler = document.querySelector('#alerNotas');
 const formulario = document.querySelector('#formulario');
 const pintarNotas = document.querySelector('#pintarNotas');
 
-let BD = { notas: [], tag: [] };
+let BD = {};
 
 formulario.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -24,7 +24,6 @@ formulario.addEventListener('submit', (e) => {
     return;
   }
   agregarNota(titulo, contenido, BD);
-  monstrarNotas(BD);
 
   formulario.reset();
   formulario.titulo.focus();
@@ -40,8 +39,10 @@ pintarNotas.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', (e) => {
   if (localStorage.getItem('BD')) {
     BD = JSON.parse(localStorage.getItem('BD'));
-    monstrarNotas(BD);
+  } else {
+    BD = { notas: [], tag: [] };
   }
+  monstrarNotas(BD);
 });
 
 /*

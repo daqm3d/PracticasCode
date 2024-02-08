@@ -121,7 +121,7 @@ body {
       height: 60vw;
       max-width: 340px;
       max-height: 300px;
-      background-image: url(--svgSinNotas);
+      background-image: var(--svgSinNotas);
     }
   }
   & .tarjeta {
@@ -135,10 +135,8 @@ body {
     }
   }
   details[name='nota'] {
-    * {
-      font-size: 2rem;
-      font-weight: 100;
-    }
+    font-size: 1.2rem;
+    font-weight: 100;
     .ResueltoTrue {
       background: var(--color-resuelto);
       opacity: 50%;
@@ -162,6 +160,7 @@ body {
       background: var(--color-notaConten);
       padding: 10px;
     }
+
     #logica {
       display: flex;
       flex-direction: row;
