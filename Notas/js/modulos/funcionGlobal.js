@@ -3,13 +3,14 @@ const templateNota = document.querySelector('#templateNota').content;
 
 const agregarNota = (titulo, contenido, BD) => {
   let id = BD.notas.length;
+  //! id ? id =0 : id = parseInt(BD.notas[id - 1].id);
   if (!id) {
     id = 0;
   } else {
     id = parseInt(BD.notas[id - 1].id);
   }
   const objetoNota = {
-    id: `${id+1}`,
+    id: `${id + 1}`,
     status: false,
     titulo: titulo,
     contenido: contenido,
