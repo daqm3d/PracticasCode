@@ -1,2 +1,7 @@
 # PracticasCode
-Conjunto de diversar practicas de codigos las cuales aprendi en la ruta de mi aprendisaje 
+
+Conjunto de diversos codigos de prueba, las cuales permitieron adquirir diversos conocimientos en la ruta de mi aprendizaje en el **Desarrollo Web**
+
+## Aplicaciones
+
+- NotasApp
