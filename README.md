@@ -1,4 +1,4 @@
-# PracticasCode<picture><img align="right" valign="center" height="60" width="60" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Keyboard.webp" alt="CurriFolio logo" /></picture>
+# PracticasCode<picture><img align="right" valign="center" height="60" width="60" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Keyboard.webp" alt="PracticasCode logo" /></picture>
 <!--
  <img valign="center"  width="900" src="./public/PortfolioDAQM3D.png" alt="CurriFolio logo" /> 
 -->
