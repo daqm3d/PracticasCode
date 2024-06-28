@@ -1,6 +1,10 @@
-# NotasApp<picture><img align="right" valign="center" height="60" width="60" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Briefcase.webp" alt="CurriFolio logo" /></picture>
+# NotasApp</picture><img align="right" valign="center" height="60" width="60" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Memo.webp" alt="NotasApp logo" /></picture>
 
-Aplicacion de notas que permite crear, editar,archivar, tachar y eliminar la informacion
+<!--
+ <img valign="center"  width="900" src="./css/SVG/NotasApp.png" alt="NotasApp imagen" />
+-->
+
+Aplicacion de notas que permite crear, editar, archivar, tachar y eliminar la información.
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Books.webp" alt="Books" width="25" height="25" /> Lenguajes y Framewor Usadas
 
@@ -22,6 +26,6 @@ Aplicacion de notas que permite crear, editar,archivar, tachar y eliminar la inf
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Open%20Book.webp" alt="Open Book" width="25" height="25" /> Referencia
 
 - Video de inspiración de Notas de []().
-- Pagina de [Ilustraciones](https://undraw.co/illustrations). 
-- Pagina de [Fuentes]().
-- Pagina de [SVG](https://icons8.com/icon/set/editing/pulsar-color).
+- Pagina de donde se tomaron las [Ilustraciones](https://undraw.co/illustrations).
+- Pagina de donde se tomaron las [Fuentes](https://www.1001fonts.com/).
+- Pagina de donde se tomaron los [SVG](https://icons8.com/icon/set/editing/pulsar-color).

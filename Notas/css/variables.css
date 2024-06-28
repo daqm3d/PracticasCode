@@ -13,7 +13,7 @@
 :root {
   /*  ? Estilos de texto */
   --font-primari: 'RubikDood';
-  --font-segundari: 'Caveat';
+  --font-segundari: 'Stickynotes';
   --tex-boton: #fff;
   --tex-aler: #b92424;
 
@@ -28,8 +28,7 @@
   --color-resueltoConten: #b3b1b1;
   --color-aler: #fac8c8;
   --color-exito: rgb(107, 228, 107);
-  --estilo-tex: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
-    sans-serif;
+  --estilo-tex: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 
   /* ? SVG ICONS */
   --svgFavicon: url('./css/SVG/favicon.svg');
