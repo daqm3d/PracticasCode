@@ -4,7 +4,7 @@
  <img valign="center"  width="900" src="./css/SVG/NotasApp.png" alt="NotasApp imagen" />
 -->
 
-Aplicación que permite la **creación**, **edición**, **tachado**, **archivado** y **eliminado** de las notas guardadas, usando el **LocalStorage** del navegador como base de datos.
+Aplicación que permite la **creación**, **edición**, **tachado**, **archivado** y **eliminado** de notas tanto sencillas como con descripción y guardadas usando el **LocalStorage** del navegador como base de datos.
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Books.webp" alt="Books" width="25" height="25" /> Lenguajes y Framework Usadas
 
