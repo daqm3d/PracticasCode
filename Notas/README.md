@@ -1,7 +1,7 @@
 # NotasApp</picture><img align="right" valign="center" height="60" width="60" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Memo.webp" alt="NotasApp logo" /></picture>
 
 <!--
- <img valign="center"  width="900" src="./css/SVG/NotasApp.png" alt="NotasApp imagen" />
+ <img valign="center"  width="900" src="./NotasApp.png" alt="NotasApp imagen" />
 -->
 
 Aplicación que permite la **creación**, **edición**, **tachado**, **archivado** y **eliminado** de notas tanto sencillas como con descripción y guardadas usando el **LocalStorage** del navegador como base de datos.
