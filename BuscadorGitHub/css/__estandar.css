@@ -1,0 +1,36 @@
+html {
+  scrollbar-color: #5bfa5b #18193f;
+  font-family: 'Cinzel Variable', 'Courier New';
+  letter-spacing: -0.025rem;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+*,
+*::before,
+*::after {
+  font-family: 'Cinzel Variable', 'Courier New';
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Playfair Display Variable', serif;
+  text-wrap: balance;
+}
+time,
+p,
+li {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
