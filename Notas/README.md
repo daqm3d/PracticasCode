@@ -30,3 +30,4 @@ Aplicación que permite la **creación**, **edición**, **tachado**, **archivado
 - Pagina de donde se tomaron las [Ilustraciones](https://undraw.co/illustrations).
 - Pagina de donde se tomaron las [Fuentes](https://www.1001fonts.com/).
 - Pagina de donde se tomaron los [SVG](https://icons8.com/icon/set/editing/pulsar-color).
+- Emojis animados de [Animated TeleEmojis](https://telegram-animated-emojis.vercel.app/).
