@@ -1,6 +1,21 @@
 /* * Estilos Variables */
 @import url('./css/variables.css');
 
+/* # Animation keyframes */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    display: block;
+  }
+}
+
 /* # clases globales */
 * {
   box-sizing: border-box;
@@ -54,6 +69,7 @@ body {
       }
     }
     & #alerNotas {
+      animation: fade-in 0.7s ease-out;
       background: var(--color-aler);
       justify-content: space-evenly;
       padding-block: 10px;
@@ -127,6 +143,7 @@ body {
       flex-grow: 1;
     }
   }
+
   details[name='nota'] {
     font-weight: 100;
     .ResueltoTrue {
