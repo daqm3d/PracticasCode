@@ -9,7 +9,7 @@ Aplicación que permite buscar usuarios y proyectos en GitHub, obteniendo
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Books.webp" alt="Books" width="25" height="25" /> Lenguajes y Framework Usadas
 
 - HTML5
-- CSS
+- CSS3
 - JavasScript
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Toolbox.webp" alt="Toolbox" width="25" height="25" /> Herramientas y Tecnologías Usados

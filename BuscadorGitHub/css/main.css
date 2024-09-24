@@ -13,77 +13,137 @@ body {
     var(--body-color-primario)
   );
   background: linear-gradient(90deg, var(--body-color-secundario), var(--body-color-primario));
+
   opacity: 90%;
   main {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     gap: 1rem;
-    height: 90%;
-    grid-template-rows: 1fr 2fr;
   }
 }
 header.favorites {
-  /* background: #a35454; */
+  display: flex;
+  gap: 10px;
+  width: 100vw;
+  max-height: 25%;
+  padding: 10px;
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    z-index: 1;
+
+    width: 50%;
+    overflow-x: auto;
+    white-space: nowrap;
+    article {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      background: #fffafa;
+    }
+  }
 }
-article {
+
+article.formulario {
   display: flex;
   justify-content: center;
-  height: 70%;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
   .content {
+    z-index: 2;
     display: flex;
-    padding: 25px;
+    padding: 35px;
     width: 90%;
     max-width: 600px;
     position: absolute;
-    border-radius: 10px;
+    border-radius: 30px 100px 30px 100px;
     flex-direction: column;
-    background: radial-gradient(
-      circle,
-      var(--content-color-secundario),
-      var(--content-color-primario)
-    );
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    .result {
-      background: #a35454;
-      margin-top: 1rem;
-    }
+    background: #00000080;
+    box-shadow: 0 2px 6px var(--conten-shadow);
     h1 {
-      margin-bottom: 20px;
-      font-weight: 900;
+      font-weight: 700;
       font-size: 2rem;
       letter-spacing: 10px;
       text-align: center;
     }
+    .buscador {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 10px;
+      .form-group {
+        position: relative;
+        margin-top: 25px;
+        flex: 49%;
+      }
+
+      label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #aaa;
+        transition: 0.2s ease all;
+        pointer-events: none;
+      }
+      input,
+      select {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        background: var(--input-color);
+      }
+
+      input:focus + label,
+      input:not(:placeholder-shown) + label,
+      select:focus + label,
+      select:has(option[value='']:not(:checked)) + label {
+        top: -25px;
+        left: 10px;
+        font-size: 14px;
+        color: #fffafa;
+      }
+      input[type='submit'] {
+        background: var(--botton);
+        font-weight: 500;
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      input[type='submit']:hover {
+        background: linear-gradient(
+          90deg,
+          var(--body-color-secundario),
+          var(--body-color-primario)
+        );
+      }
+    }
+    footer {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      gap: 5px;
+
+      overflow-x: auto;
+      white-space: nowrap;
+      max-height: 25vh;
+      article {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        border: 1px solid var(--text-color);
+      }
+    }
   }
 }
 /* article {
-  .buscador {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
 
-    input,
-    select {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      width: 200px;
-      background: var(--input-color);
-      color: var(--text-color);
-    }
-    input[type='submit'] {
-      background-color: var(--body-color-primario);
-      border: 1px solid var(--text-color);
-      color: var(--text-color);
-      cursor: pointer;
-      width: 100px;
-      transition: all 0.3s ease;
-    }
-    input[type='submit']:hover {
-      background-color: var(--body-color-secundario);
-    }
-  }
   footer {
     margin-top: 1rem;
     width: 100%;

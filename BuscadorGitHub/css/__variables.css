@@ -4,18 +4,22 @@
   --color-black: #1b1d1e;
 
   --color-morado: #9e99ff;
-  --color-blue: #b4dffd;
+  --color-blue3: #b4dffd;
   --color-blue2: #34ace0;
+  --color-blue: #1e90ff;
 
   /* Variables de colores */
   --body-color-primario: var(--color-morado);
-  --body-color-secundario: var(--color-blue);
+  --body-color-secundario: var(--color-blue3);
 
-  --content-color-primario: var(--color-blue2);
-  --content-color-secundario: var(--color-blue);
+  --conten-color: var(--color-write);
+  --conten-shadow: var(--color-black);
+
+  --botton: var(--color-blue2);
+  --botton-hover: var(--color-blue);
 
   --input-color: var(--color-write);
-  --text-color: var(--color-black);
+  --text-color: var(--color-write);
 }
 @font-face {
   font-family: 'Cinzel Variable';
