@@ -1,7 +1,9 @@
 :root {
   /* Paleta de Colores */
   --color-write: #fafafa;
+  --color-write2: #aaa;
   --color-black: #1b1d1e;
+  --color-black2: #00000080;
 
   --color-morado: #9e99ff;
   --color-blue3: #b4dffd;
@@ -13,6 +15,7 @@
   --body-color-secundario: var(--color-blue3);
 
   --conten-color: var(--color-write);
+  --conten-formulario: var(--color-black2);
   --conten-shadow: var(--color-black);
 
   --botton: var(--color-blue2);
@@ -20,6 +23,7 @@
 
   --input-color: var(--color-write);
   --text-color: var(--color-write);
+  --text-label: var(--color-write2);
 }
 @font-face {
   font-family: 'Cinzel Variable';

@@ -1,5 +1,5 @@
 html {
-  scrollbar-color: #5bfa5b #18193f;
+  scrollbar-color: var(--color-blue2) var(--color-blue3);
   font-family: 'Cinzel Variable', 'Courier New';
   letter-spacing: -0.025rem;
 }

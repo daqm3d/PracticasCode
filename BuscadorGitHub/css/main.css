@@ -41,7 +41,7 @@ header.favorites {
       width: 50px;
       height: 50px;
       margin: 5px;
-      background: #fffafa;
+      background: var(--conten-color);
     }
   }
 }
@@ -56,19 +56,20 @@ article.formulario {
   .content {
     z-index: 2;
     display: flex;
-    padding: 35px;
+    padding: 20px 35px;
     width: 90%;
     max-width: 600px;
     position: absolute;
     border-radius: 30px 100px 30px 100px;
     flex-direction: column;
-    background: #00000080;
+    background: var(--conten-formulario);
     box-shadow: 0 2px 6px var(--conten-shadow);
     h1 {
       font-weight: 700;
       font-size: 2rem;
       letter-spacing: 10px;
       text-align: center;
+      margin-bottom: 10px;
     }
     .buscador {
       display: flex;
@@ -85,7 +86,7 @@ article.formulario {
         position: absolute;
         top: 10px;
         left: 10px;
-        color: #aaa;
+        color: var(--text-label);
         transition: 0.2s ease all;
         pointer-events: none;
       }
@@ -105,7 +106,7 @@ article.formulario {
         top: -25px;
         left: 10px;
         font-size: 14px;
-        color: #fffafa;
+        color: var(--text-color);
       }
       input[type='submit'] {
         background: var(--botton);
@@ -114,31 +115,35 @@ article.formulario {
         letter-spacing: 5px;
         color: var(--text-color);
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: all 0.5s ease-in-out;
+        margin-top: 10px;
       }
       input[type='submit']:hover {
-        background: linear-gradient(
-          90deg,
-          var(--body-color-secundario),
-          var(--body-color-primario)
-        );
+        background: var(--body-color-primario);
+        color: var(--conten-shadow);
       }
     }
     footer {
       display: flex;
       flex-direction: column;
-      margin-top: 15px;
+      margin-top: 20px;
       gap: 5px;
-
       overflow-x: auto;
       white-space: nowrap;
-      max-height: 25vh;
+
+      height: 150px;
       article {
         position: relative;
         width: 100%;
-        height: 50px;
+        padding: 10px;
         border: 1px solid var(--text-color);
       }
+    }
+    footer:not(:has(article)) {
+      background-image: url(../img/search.svg);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 }
