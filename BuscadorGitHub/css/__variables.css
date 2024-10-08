@@ -22,6 +22,7 @@
   --botton-hover: var(--color-blue);
 
   --input-color: var(--color-write);
+  --tex-input:var(--color-black);
   --text-color: var(--color-write);
   --text-label: var(--color-write2);
 }

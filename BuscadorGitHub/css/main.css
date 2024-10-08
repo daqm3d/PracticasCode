@@ -1,6 +1,5 @@
 @import url('__variables.css');
 @import url('__estandar.css');
-@import url('__medias.css');
 
 body {
   width: 100vw;
@@ -56,7 +55,7 @@ article.formulario {
   .content {
     z-index: 2;
     display: flex;
-    padding: 20px 35px;
+    padding: 20px 35px 35px;
     width: 90%;
     max-width: 600px;
     position: absolute;
@@ -97,6 +96,7 @@ article.formulario {
         border-radius: 5px;
         width: 100%;
         background: var(--input-color);
+        color: var(--tex-input);
       }
 
       input:focus + label,
@@ -122,6 +122,13 @@ article.formulario {
         background: var(--body-color-primario);
         color: var(--conten-shadow);
       }
+      input[type='submit']:disabled {
+        background-color: var(--input-color);
+        color: var(--text-label);
+        cursor: not-allowed;
+        opacity: 0.6;
+        border: 1px solid var(--text-label);
+      }
     }
     footer {
       display: flex;
@@ -130,9 +137,11 @@ article.formulario {
       gap: 5px;
       overflow-x: auto;
       white-space: nowrap;
-
-      height: 150px;
+      min-height: 100px;
+      max-height: 200px;
       article {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
         position: relative;
         width: 100%;
         padding: 10px;

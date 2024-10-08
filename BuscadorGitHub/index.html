@@ -6,6 +6,10 @@
     <link rel="icon" href="img/search-logo.png" />
     <title>Buscador GitHub</title>
     <link rel="stylesheet" href="css/main.css" />
+    <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- versión de producción, optimizada para tamaño y velocidad  -->
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script> -->
   </head>
   <body>
     <main id="app">
@@ -103,17 +107,24 @@
 
       <article class="formulario">
         <div class="content">
-          <form action="">
+          <form @submit.prevent="buscar">
             <header>
               <h1 class="content_title">Buscador GitHub</h1>
             </header>
             <section class="buscador">
               <div class="form-group">
-                <input type="search" id="buscar" name="buscar" required placeholder="" />
+                <input
+                  v-model="search"
+                  type="search"
+                  id="buscar"
+                  name="buscar"
+                  required
+                  placeholder=""
+                />
                 <label for="buscar">Frase a Buscar </label>
               </div>
               <div class="form-group">
-                <select name="tipo" id="tipo" required placeholder="">
+                <select v-model="params" name="tipo" id="tipo" required placeholder="">
                   <option value="" selected></option>
                   <option value="users">Por Usuario</option>
                   <option value="repos">Por Repositorios</option>
@@ -121,27 +132,17 @@
                 </select>
                 <label for="tipo">Tipo de Búsqueda </label>
               </div>
-              <input type="submit" value="Buscar" />
+              <input :boton type="submit" value="Buscar" />
             </section>
             <footer class="result">
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
-              <article>1</article>
+              <template v-for="res in result">
+                <article v-if="res">
+                  <img :src="res.avatar_url" :alt="res.login" />
+                  <h1>User: {{ res.login}}</h1>
+                  <a :href="res.html_url"><span>Repositorio</span></a>
+                </article>
+              </template>
+              <article v-if="error">{{ error }}</article>
             </footer>
           </form>
         </div>
@@ -166,6 +167,6 @@
         d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z"
       />
     </svg>
-    <script arc="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
