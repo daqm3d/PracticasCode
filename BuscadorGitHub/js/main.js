@@ -3,22 +3,21 @@ const { createApp, ref } = Vue;
 
 const app = createApp({
   data() {
-    const [params, search, result, error, boton] = ['', null, null, null, null];
+    const [params, search, result, error, disabled] = ['', null, null, null, false];
 
     return {
       params,
       search,
       result,
       error,
-      boton,
+      disabled,
     };
     console.log(params);
   },
   methods: {
     async buscar() {
-      this.buton = 'disabled';
+      this.disabled = true;
       this.result = null;
-      this.buton = null;
       this.error = null;
       try {
         // Llamada a la función category y espera su resultado
@@ -35,6 +34,7 @@ const app = createApp({
         this.error = error; // Manejar el error
         console.log('error ' + error);
       }
+      this.disabled = false;
     },
   },
 });

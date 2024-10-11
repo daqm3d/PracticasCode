@@ -132,14 +132,14 @@
                 </select>
                 <label for="tipo">Tipo de Búsqueda </label>
               </div>
-              <input :boton type="submit" value="Buscar" />
+              <input :disabled type="submit" value="Buscar" />
             </section>
             <footer class="result">
               <template v-for="res in result">
                 <article v-if="res">
                   <img :src="res.avatar_url" :alt="res.login" />
                   <h1>User: {{ res.login}}</h1>
-                  <a :href="res.html_url"><span>Repositorio</span></a>
+                  <a :href="res.html_url" target="_blank"><span>Repositorio</span></a>
                 </article>
               </template>
               <article v-if="error">{{ error }}</article>
