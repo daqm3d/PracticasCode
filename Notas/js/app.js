@@ -1,7 +1,4 @@
-import {
-  agregarNota,
-  monstrarNotas,
-} from './modulos/funcionGlobal.js';
+import { agregarNota, monstrarNotas, animateNotas } from './modulos/funcionGlobal.js';
 import { botonEvent } from './modulos/notasEvent.js';
 
 const aler = document.querySelector('#alerNotas');
@@ -15,23 +12,23 @@ formulario.addEventListener('submit', (e) => {
   aler.style.display = 'none';
   const datos = new FormData(formulario);
   const [titulo, contenido] = [...datos.values()];
+  const editar = formulario.children.titulo.dataset.id;
 
   if (!titulo.trim()) {
-    aler.querySelector(
-      'h2'
-    ).innerHTML = `<span>!</span>Se requiere un titulo para crear la nota`;
+    aler.querySelector('h2').innerHTML = `<span>!</span>Se requiere un titulo para crear la nota`;
     aler.style.display = 'inherit';
     return;
   }
-  agregarNota(titulo, contenido, BD);
-
-  formulario.reset();
-  formulario.titulo.focus();
+  agregarNota(titulo, contenido, BD, editar);
+  if (editar === undefined) {
+    const notas = document.querySelectorAll('details');
+    const ultimaNota = notas[notas.length - 1];
+    animateNotas(ultimaNota, 'add', BD);
+  }
 });
 
 // # Funciones de logicaNotas
 pintarNotas.addEventListener('click', (e) => {
-  console.log(e);
   botonEvent(e, BD);
   e.stopPropagation();
 });
