@@ -12,7 +12,7 @@ services:
       - overlay
     volumes:
       - /var/Docker/Notas:/var/www/html/Notas
-      - ./.docker/http/vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - ./.docker/http/vhost_notas.conf:/etc/apache2/sites-available/000-default.conf
 
 networks:
   overlay:
