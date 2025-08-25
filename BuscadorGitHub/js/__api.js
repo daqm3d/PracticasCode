@@ -4,6 +4,7 @@
  * @param {string} search - El valor de búsqueda (por defecto es una cadena vacía).
  * @returns {Promise} - Promesa que resuelve con los resultados de la búsqueda.
  */
+
 export function category(params, search = '') {
   const API = 'https://api.github.com/';
   let endpoint = '';
@@ -11,9 +12,9 @@ export function category(params, search = '') {
   // Determinar el endpoint según el tipo de búsqueda
   switch (params) {
     case 'users':
-      // https://api.github.com/users/ para buscar usuarios
-      // https://api.github.com/search/users?q=daqm3
       endpoint = `search/users?q=${search}`;
+      /*endpoint = `search/users?q=${search}&page=1&per_page=20`; */
+
       break;
     case 'repos':
       // https://api.github.com/search/repositories?q=daqm3d busca por nombre de repo

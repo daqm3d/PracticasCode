@@ -20,21 +20,31 @@ const app = createApp({
       this.result = null;
       this.error = null;
       try {
-        // Llamada a la función category y espera su resultado
         const resultado = await category('users', this.search);
         if (resultado.total_count === 0) {
           this.error = 'No se encontró resultados';
         }
-        if (resultado.total_count > 10) {
+        /* if (resultado.total_count > 15) {
           this.error = `Los Resultados son ${resultado.total_count}, especifique mejor la búsqueda`;
-        } else if (resultado.total_count >= 1) {
-          this.result = resultado.items;
+        } else  */ if (resultado.total_count >= 1) {
+          let resData = [];
+          if (this.params === 'users') {
+            resData = await Promise.all(
+              resultado.items.map(async (item) => {
+                const data = await fetch(item.url);
+                return await data.json();
+              })
+            );
+          }
+          console.log(resData);
+          this.result = resData;
         }
       } catch (error) {
         this.error = error; // Manejar el error
         console.log('error ' + error);
+      } finally {
+        this.disabled = false;
       }
-      this.disabled = false;
     },
   },
 });

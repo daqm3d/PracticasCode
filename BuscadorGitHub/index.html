@@ -138,8 +138,16 @@
               <template v-for="res in result">
                 <article v-if="res">
                   <img :src="res.avatar_url" :alt="res.login" />
-                  <h1>User: {{ res.login}}</h1>
-                  <a :href="res.html_url" target="_blank"><span>Repositorio</span></a>
+                  <div>
+                    <a :href="res.html_url" target="_blank"
+                      ><h2>{{ res.name ? res.name:res.login }}</h2></a
+                    >
+                    <span>creado: {{ res.created_at }}</span>
+                    <span>ultima actualizacion: {{ res.updated_at }}</span>
+                    <span>Proyectos Publicos: {{ res.public_repos }}</span>
+                    <span>{{ res.location }}</span>
+                  </div>
+                  <section></section>
                 </article>
               </template>
               <article v-if="error">{{ error }}</article>
