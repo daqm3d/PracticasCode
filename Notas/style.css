@@ -39,7 +39,7 @@
 /* # configuracion de ventanas  */
 body {
   .container {
-    margin: 5px auto;
+    margin: 20px auto;
     align-items: center;
     width: 100%;
     max-width: 800px;
@@ -56,13 +56,12 @@ body {
       justify-content: space-evenly;
       margin: 1rem auto;
       align-items: center;
+      text-align: center;
       & span#favicon {
         background-image: var(--svgFavicon);
         background-repeat: no-repeat;
-        width: 20vw;
-        height: 20vw;
-        max-width: 60px;
-        max-height: 60px;
+        width: 60px;
+        height: 60px;
       }
       h1#titulo:hover {
         transform: rotate(20deg);
