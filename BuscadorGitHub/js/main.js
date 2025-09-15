@@ -1,5 +1,12 @@
-import { category } from './__api.js';
-const { createApp, ref } = Vue;
+import { category, userAPI } from './__api.js';
+const { createApp, computed } = Vue;
+/**
+ * @param {string} params - El tipo de búsqueda ('users', 'repos', 'topics').
+ * @param {string} search - El valor de búsqueda.
+ * @param {string} result - El valor de respuesta de la búsqueda.
+ * @param {string} error  - El valor de errores al generar la búsqueda.
+ * @param {string} disabled - Valor de estatus del botón de búsqueda.
+ */
 
 const app = createApp({
   data() {
@@ -12,7 +19,6 @@ const app = createApp({
       error,
       disabled,
     };
-    console.log(params);
   },
   methods: {
     async buscar() {
@@ -20,31 +26,35 @@ const app = createApp({
       this.result = null;
       this.error = null;
       try {
-        const resultado = await category('users', this.search);
+        const resultado = await category(this.params, this.search);
+        console.log(resultado);
         if (resultado.total_count === 0) {
           this.error = 'No se encontró resultados';
+          return;
         }
-        /* if (resultado.total_count > 15) {
-          this.error = `Los Resultados son ${resultado.total_count}, especifique mejor la búsqueda`;
-        } else  */ if (resultado.total_count >= 1) {
+        if (resultado.total_count > 300) {
+          this.error = `Los Resultados son ${resultado.total_count}, especifique mejor los parámetros de búsqueda`;
+        } else {
           let resData = [];
           if (this.params === 'users') {
-            resData = await Promise.all(
-              resultado.items.map(async (item) => {
-                const data = await fetch(item.url);
-                return await data.json();
-              })
-            );
+            resData = await userAPI(resultado);
           }
           console.log(resData);
           this.result = resData;
         }
       } catch (error) {
-        this.error = error; // Manejar el error
-        console.log('error ' + error);
+        console.log(error);
+        this.error = error.message || 'Ha ocurrido un error inesperado'; // Manejar el error
       } finally {
         this.disabled = false;
       }
+    },
+    fecha(data) {
+      const fecha = new Date(data);
+      const dia = fecha.getDate();
+      const mes = fecha.getMonth() + 1;
+      const anio = fecha.getFullYear();
+      return `${dia}/${mes}/${anio}`;
     },
   },
 });

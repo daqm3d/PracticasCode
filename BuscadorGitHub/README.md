@@ -1,18 +1,18 @@
-# Buscador GitHub Users</picture><img align="right" valign="center" height="60" width="60" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Magnifying%20Glass%20Tilted%20Left.webp" alt="BuscadorGitHub logo" /></picture>
+# Buscador GitHub Users<picture><img align="right" valign="center" height="60" width="60" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Magnifying%20Glass%20Tilted%20Left.webp" alt="BuscadorGitHub logo" /></picture>
 
 <!--
  <img valign="center"  width="900" src="./css/SVG/NotasApp.png" alt="NotasApp imagen" />
 -->
 
-Aplicación que permite buscar usuarios y proyectos en GitHub, obteniendo
+Aplicación que permite buscar usuarios y repositorios en GitHub, mostrando perfil, lista de repositorios y enlaces directos mediante la API pública de GitHub.
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Books.webp" alt="Books" width="25" height="25" /> Lenguajes y Framework Usadas
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Books.webp" alt="Books" width="25" height="25" /> Lenguajes y Framework Usados
 
 - HTML5
 - CSS3
-- JavasScript
+- JavaScript
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Toolbox.webp" alt="Toolbox" width="25" height="25" /> Herramientas y Tecnologías Usados
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Toolbox.webp" alt="Toolbox" width="25" height="25" /> Herramientas y Tecnologías Usadas
 
 - Vuejs
 - Git
@@ -20,10 +20,10 @@ Aplicación que permite buscar usuarios y proyectos en GitHub, obteniendo
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/File%20Folder.webp" alt="File Folder" width="25" height="25" /> Conocimientos Adquiridos
 
-- Uso de [Template](https://developer.mozilla.org/es/docs/Web/HTML/Element/template#:~:text=El%20elemento%20HTML%20es,tiempo%20de%20ejecuci%C3%B3n%20empleando%20JavaScript.) de HTML y atributo [Dataset](https://developer.mozilla.org/es/docs/Learn/HTML/Howto/Use_data_attributes) en JavasCript.
-- Uso de los métodos [CloneNode](https://lenguajejs.com/javascript/dom/crear-elementos-dom/#el-m%C3%A9todo-clonenode) y [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) en JavasCript.
+- Uso de [Template](https://developer.mozilla.org/es/docs/Web/HTML/Element/template#:~:text=El%20elemento%20HTML%20es,tiempo%20de%20ejecuci%C3%B3n%20empleando%20JavaScript.) de HTML y atributo [Dataset](https://developer.mozilla.org/es/docs/Learn/HTML/Howto/Use_data_attributes) en JavaScript.
+- Uso de los métodos [CloneNode](https://lenguajejs.com/javascript/dom/crear-elementos-dom/#el-m%C3%A9todo-clonenode) y [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) en JavaScript.
 - Manejo de [LocalStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage).
-  -Uso de los métodos de [Animate](https://developer.mozilla.org/es/docs/Web/API/Element/animate) y [closest](https://developer.mozilla.org/es/docs/Web/API/Element/closest) en JavasCript.
+- Uso de los métodos de [Animate](https://developer.mozilla.org/es/docs/Web/API/Element/animate) y [closest](https://developer.mozilla.org/es/docs/Web/API/Element/closest) en JavaScript.
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Open%20Book.webp" alt="Open Book" width="25" height="25" /> Referencia
 

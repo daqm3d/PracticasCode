@@ -9,28 +9,29 @@ export function category(params, search = '') {
   const API = 'https://api.github.com/';
   let endpoint = '';
 
+  // Validar que se haya proporcionado un valor de búsqueda
+  const term = String(search).trim();
+  if (!term) {
+    return Promise.reject({ message: 'Faltan parámetros, se requiere una frase de búsqueda' });
+  }
+
   // Determinar el endpoint según el tipo de búsqueda
   switch (params) {
     case 'users':
-      endpoint = `search/users?q=${search}`;
+      endpoint = `search/users?q=${encodeURIComponent(term)}`;
       /*endpoint = `search/users?q=${search}&page=1&per_page=20`; */
 
       break;
     case 'repos':
       // https://api.github.com/search/repositories?q=daqm3d busca por nombre de repo
-      endpoint = `search/repositories?q=${search}`;
+      endpoint = `search/repositories?q=${encodeURIComponent(search)}`;
       break;
     case 'topics':
       // "https://api.github.com/search/repositories?q=topic:machine-learning" buscar por etiqueta
-      endpoint = `search/repositories?q=topic:${search}`;
+      endpoint = `search/repositories?q=topic:${encodeURIComponent(search)}`;
       break;
     default:
-      return Promise.reject('Tipo de búsqueda no válido');
-  }
-
-  // Validar que se haya proporcionado un valor de búsqueda
-  if (!search) {
-    return Promise.reject('Faltan parámetros, se requiere una frase de búsqueda');
+      return Promise.reject({ message: 'Tipo de búsqueda no válido' });
   }
 
   return buscarAPI(endpoint, API);
@@ -40,11 +41,32 @@ async function buscarAPI(endpoint, api) {
   try {
     const response = await fetch(api + endpoint);
     if (!response.ok) {
-      return Promise.reject(`Error ${response}: ${response.statusText}`);
+      return Promise.reject(response);
     }
     const data = await response.json();
     return data;
   } catch (error) {
-    return Promise.reject(`Error al realizar la búsqueda: ${error.message}`);
+    const data = await error.json();
+    console.log(data);
+    return Promise.reject({ message: `Error al realizar la búsqueda: ${data.message}` });
   }
 }
+export async function userAPI(resultado) {
+  try {
+    const resData = await Promise.all(
+      resultado.items.map(async (item) => {
+        const data = await fetch(item.url);
+        if (!data.ok) {
+          return Promise.reject(data);
+        }
+        return await data.json();
+      })
+    );
+    return resData;
+  } catch (error) {
+    const data = await error.json();
+    console.log(data);
+    return Promise.reject({ message: `Error al buscar usuarios: ${data.message}` });
+  }
+}
+
