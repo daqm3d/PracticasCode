@@ -1,4 +1,6 @@
 import { category, userAPI } from './__api.js';
+import Favorites from './components/favorites.js';
+
 const { createApp, computed } = Vue;
 /**
  * @param {string} params - El tipo de búsqueda ('users', 'repos', 'topics').
@@ -10,10 +12,11 @@ const { createApp, computed } = Vue;
 
 const app = createApp({
   data() {
-    const [params, search, result, error, disabled] = ['', null, null, null, false];
+    const [params, busqueda, search, result, error, disabled] = ['', null, null, null, null, false];
 
     return {
       params,
+      busqueda,
       search,
       result,
       error,
@@ -25,6 +28,7 @@ const app = createApp({
       this.disabled = true;
       this.result = null;
       this.error = null;
+      this.busqueda = null;
       try {
         const resultado = await category(this.params, this.search);
         console.log(resultado);
@@ -38,6 +42,11 @@ const app = createApp({
           let resData = [];
           if (this.params === 'users') {
             resData = await userAPI(resultado);
+            this.busqueda = this.params;
+          }
+          if (this.params == 'repos') {
+            resData = resultado;
+            this.busqueda = this.params;
           }
           console.log(resData);
           this.result = resData;
@@ -56,6 +65,9 @@ const app = createApp({
       const anio = fecha.getFullYear();
       return `${dia}/${mes}/${anio}`;
     },
+  },
+  components: {
+    'Favorites': Favorites,
   },
 });
 
