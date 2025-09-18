@@ -24,7 +24,7 @@ export function category(params, search = '') {
       break;
     case 'repos':
       // https://api.github.com/search/repositories?q=daqm3d busca por nombre de repo
-      endpoint = `search/repositories?q=${encodeURIComponent(search)}`;
+      endpoint = `search/repositories?q=${encodeURIComponent(term)}`;
       break;
     case 'topics':
       // "https://api.github.com/search/repositories?q=topic:machine-learning" buscar por etiqueta
@@ -69,4 +69,3 @@ export async function userAPI(resultado) {
     return Promise.reject({ message: `Error al buscar usuarios: ${data.message}` });
   }
 }
-
