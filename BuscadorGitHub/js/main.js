@@ -1,5 +1,6 @@
 import { category, userAPI } from './__api.js';
-import Favorites from './components/favorites.js';
+import FooterResult from './components/footer-result.js';
+import HeaderFavorites from './components/header-favorites.js';
 
 const { createApp, computed } = Vue;
 /**
@@ -58,16 +59,10 @@ const app = createApp({
         this.disabled = false;
       }
     },
-    fecha(data) {
-      const fecha = new Date(data);
-      const dia = fecha.getDate();
-      const mes = fecha.getMonth() + 1;
-      const anio = fecha.getFullYear();
-      return `${dia}/${mes}/${anio}`;
-    },
   },
   components: {
-    'Favorites': Favorites,
+    'header-favorites': HeaderFavorites,
+    'footer-result': FooterResult,
   },
 });
 
