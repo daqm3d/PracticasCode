@@ -14,38 +14,9 @@
   <body>
     <main id="app">
       <header-favorites></header-favorites>
-      <article class="formulario">
-        <div class="content">
-          <form @submit.prevent="buscar">
-            <header>
-              <h1 class="content_title">Buscador GitHub</h1>
-            </header>
-            <section class="buscador">
-              <div class="form-group">
-                <input
-                  v-model="search"
-                  type="search"
-                  id="buscar"
-                  name="buscar"
-                  required
-                  placeholder=""
-                />
-                <label for="buscar">Frase a Buscar </label>
-              </div>
-              <div class="form-group">
-                <select v-model="params" name="tipo" id="tipo" required placeholder="">
-                  <option value="" selected></option>
-                  <option value="users">Por Usuario</option>
-                  <option value="repos">Por Repositorios</option>
-                  <option value="topics">Por Etiquetas (separados con espacios)</option>
-                </select>
-                <label for="tipo">Tipo de Búsqueda </label>
-              </div>
-              <input :disabled type="submit" value="Buscar" />
-            </section>
-            <footer-result :result="result" :busqueda="busqueda" :error="error"></footer-result>
-        </div>
-      </article>
+
+      <formulario-buscador></formulario-buscador>
+
       <svg
         preserveAspectRatio="none"
         viewBox="0 0 1200 120"

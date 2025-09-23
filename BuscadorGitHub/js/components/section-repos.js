@@ -4,13 +4,18 @@ export default {
     busqueda: { type: String, required: true },
   }, */
   props: ['res', 'busqueda'],
-  template: `<section v-if="res && (busqueda=='repos' || busqueda=='topics')">
-                <h2>repos</h2>
-              </section>`,
-  mounted() {
-    const style = document.createElement('style');
-
-    style.textContent = ``;
-    document.head.appendChild(style);
+  template: `
+  <section v-if="res && (busqueda=='repos' || busqueda=='topics')">
+    <h2>repos</h2>
+  </section>`,
+  beforeMount() {
+    /* if (!document.querySelector('link[href="css/components/section-users.css"]')) {
+      this.link = document.createElement('link');
+      this.link.rel = 'stylesheet';
+      this.link.href = 'css/components/section-users.css';
+      document.head.appendChild(this.link);
+    } else {
+      this.link = document.querySelector('link[href="css/components/section-users.css"]');
+    } */
   },
 };

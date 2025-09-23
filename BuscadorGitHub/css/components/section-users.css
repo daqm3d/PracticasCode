@@ -1,0 +1,57 @@
+section#users {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--text-color);
+  align-items: center;
+  img {
+    width: 80px;
+    height: 80px;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    header {
+      display: flex;
+      justify-content: space-between;
+      span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        svg {
+          fill: var(--text-label);
+        }
+      }
+    }
+    #dataRedes {
+      display: flex;
+      flex-direction: inherit;
+      align-items: center;
+      justify-content: space-between;
+      li {
+        display: inherit;
+        gap: 10px;
+      }
+      a,
+      button {
+        padding: 5px;
+        display: inline-flex;
+        border: 1.5px solid var(--text-color);
+        border-radius: 0.5rem;
+      }
+      button {
+        padding: 5px 10px;
+        background: transparent;
+        cursor: pointer;
+      }
+      a:hover,
+      button:hover {
+        background: var(--body-color-primario);
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+}

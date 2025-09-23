@@ -1,0 +1,92 @@
+article.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
+  .content {
+    z-index: 2;
+    display: flex;
+    padding: 20px 35px 35px;
+    width: 90%;
+    max-width: 600px;
+    position: absolute;
+    border-radius: 30px 100px 30px 100px;
+    flex-direction: column;
+    background: var(--conten-formulario);
+    box-shadow: 0 2px 6px var(--conten-shadow);
+    h1 {
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 10px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .buscador {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 10px;
+      .form-group {
+        position: relative;
+        margin-top: 25px;
+        flex: 49%;
+      }
+
+      label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: var(--text-label);
+        transition: 0.2s ease all;
+        pointer-events: none;
+      }
+      input,
+      select {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        background: var(--input-color);
+        color: var(--tex-input);
+      }
+
+      input:focus + label,
+      input:not(:placeholder-shown) + label,
+      select:focus + label,
+      select:has(option[value='']:not(:checked)) + label {
+        top: -25px;
+        left: 10px;
+        font-size: 14px;
+        color: var(--text-color);
+      }
+      input[type='submit'] {
+        background: var(--botton);
+        font-weight: 500;
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        margin-top: 10px;
+      }
+      input[type='submit']:focus-visible {
+        outline: 3px solid color-mix(in srgb, var(--botton) 40%, white);
+        outline-offset: 2px;
+      }
+      input[type='submit']:hover {
+        background: var(--body-color-primario);
+        color: var(--conten-shadow);
+        outline: 3px solid color-mix(in srgb, var(--botton) 40%, white);
+        outline-offset: 2px;
+      }
+      input[type='submit']:disabled {
+        background-color: var(--input-color);
+        color: var(--text-label);
+        cursor: not-allowed;
+        opacity: 0.6;
+        border: 1px solid var(--text-label);
+      }
+    }
+  }
+}
