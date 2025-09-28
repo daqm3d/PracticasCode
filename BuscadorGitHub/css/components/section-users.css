@@ -30,6 +30,7 @@ section#users {
       display: flex;
       flex-direction: inherit;
       align-items: center;
+      margin-top: 5px;
       justify-content: space-between;
       li {
         display: inherit;
