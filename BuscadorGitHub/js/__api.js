@@ -5,9 +5,10 @@
  * @returns {Promise} - Promesa que resuelve con los resultados de la búsqueda.
  */
 
-export function category(params, search = '') {
+export function category(params, search = '', page = 1) {
   const API = 'https://api.github.com/';
   let endpoint = '';
+  let per_page = 20;
 
   // Validar que se haya proporcionado un valor de búsqueda
   const term = String(search).trim();
@@ -18,7 +19,7 @@ export function category(params, search = '') {
   // Determinar el endpoint según el tipo de búsqueda
   switch (params) {
     case 'users':
-      endpoint = `search/users?q=${encodeURIComponent(term)}`;
+      endpoint = `search/users?q=${encodeURIComponent(term)}&page=${page}&per_page=${per_page}`;
       /*endpoint = `search/users?q=${search}&page=1&per_page=20`; */
 
       break;
@@ -34,19 +35,30 @@ export function category(params, search = '') {
       return Promise.reject({ message: 'Tipo de búsqueda no válido' });
   }
 
-  return buscarAPI(endpoint, API);
+  return buscarAPI(endpoint, API, params);
 }
 
-async function buscarAPI(endpoint, api) {
+async function buscarAPI(endpoint, api, params) {
   try {
     const response = await fetch(api + endpoint);
+    let resData = [];
+
     if (!response.ok) {
       return Promise.reject(response);
     }
+
     const data = await response.json();
-    return data;
+    console.log(data);
+    if (params === 'users') {
+      resData = await userAPI(data);
+      return resData;
+    }
+    /* if (params == 'repos') {
+      resData = data;
+      return resData;
+    } */
   } catch (error) {
-    const data = await error.json();
+    const data = error;
     console.log(data);
     return Promise.reject({ message: `Error al realizar la búsqueda: ${data.message}` });
   }
