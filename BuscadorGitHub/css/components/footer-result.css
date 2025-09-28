@@ -7,6 +7,18 @@ footer#result {
   max-height: 400px;
   font-size: 12px;
   letter-spacing: 0.2rem;
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease all;
+  }
+  button:hover {
+    font-weight: bold;
+  }
   output {
     display: grid;
     grid-template-columns: 1fr 5fr;

@@ -1,20 +1,25 @@
 import SectionUsers from './section-users.js';
 import SectionRepos from './section-repos.js';
+import { category } from '../__api.js';
 
 export default {
-  /* props: {
-    result: { type: Array, required: true },
-    busqueda: { type: String, required: true },
-    error: { type: String, required: true },
-  }, */
-  props: ['result', 'busqueda', 'error'],
+  data() {
+    const [page, disabled] = [1, false];
+
+    return {
+      page,
+      disabled,
+    };
+  },
+  props: ['result'],
   template: `
-  <footer id="result" class="result">
-    <template  v-for="res in result" >
-      <section-users v-if="busqueda === 'users'" :res="res" :busqueda="busqueda" ></section-users>
-      <section-repos v-if="busqueda === 'repos'" :res="res" :busqueda="busqueda" ></section-repos>
+  <footer id="result" class="result.result">
+    <template  v-for="res in result.result" :key="res.id">
+      <section-users v-if="result.busqueda === 'users'" :res="res" :busqueda="result.busqueda" ></section-users>
+      <section-repos v-if="result.busqueda === 'repos'" :res="res" :busqueda="result.busqueda" ></section-repos>
     </template>
-    <output v-if="error"> {{ error }} </output>
+    <button :disabled="disabled" v-if="result.total > 10 && !result.error" @click="buscarMas">Cargar Más {{ result.busqueda }}</button>
+    <output v-if="result.error"> {{ result.error }} </output>
   </footer>`,
   components: {
     'section-users': SectionUsers,
@@ -27,5 +32,26 @@ export default {
       link.href = 'css/components/footer-result.css';
       document.head.appendChild(link);
     }
+  },
+  methods: {
+    async buscarMas() {
+      this.disabled = true;
+      this.page++;
+      try {
+        const resultado = await category(this.result.params, this.result.search, this.page);
+        console.log(resultado);
+        if (resultado.length === 0) {
+          this.result.error = 'No se encontró resultados';
+          return;
+        }
+        this.result.result.push(...resultado);
+        console.log(this.result.result);
+      } catch (error) {
+        console.log(error);
+        this.result.error = error.message || 'Ha ocurrido un error inesperado'; // Manejar el error
+      } finally {
+        this.disabled = false;
+      }
+    },
   },
 };
