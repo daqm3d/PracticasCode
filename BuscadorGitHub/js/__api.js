@@ -25,7 +25,9 @@ export function category(params, search = '', page = 1) {
       break;
     case 'repos':
       // https://api.github.com/search/repositories?q=daqm3d busca por nombre de repo
-      endpoint = `search/repositories?q=${encodeURIComponent(term)}`;
+      endpoint = `search/repositories?q=${encodeURIComponent(
+        term
+      )}&page=${page}&per_page=${per_page}`;
       break;
     case 'topics':
       // "https://api.github.com/search/repositories?q=topic:machine-learning" buscar por etiqueta
@@ -53,10 +55,10 @@ async function buscarAPI(endpoint, api, params) {
       resData = await userAPI(data);
       return resData;
     }
-    /* if (params == 'repos') {
+    if (params === 'repos') {
       resData = data;
-      return resData;
-    } */
+      return resData.items;
+    }
   } catch (error) {
     const data = error;
     console.log(data);

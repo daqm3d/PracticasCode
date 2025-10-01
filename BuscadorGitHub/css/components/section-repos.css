@@ -1,0 +1,8 @@
+section#repos {
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--text-color);
+  align-items: center;
+}

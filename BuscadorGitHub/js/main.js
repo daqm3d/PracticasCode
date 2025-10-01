@@ -1,7 +1,7 @@
 import Formulario from './components/formulario.js';
 import HeaderFavorites from './components/header-favorites.js';
 
-const { createApp} = Vue;
+const { createApp } = Vue;
 
 const app = createApp({
   components: {
