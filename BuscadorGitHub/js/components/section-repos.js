@@ -22,19 +22,21 @@ export default {
         </span>
       </header>
         <p v-if="res.description">{{ res.description }}</p>
-        <p>
-        creado: {{ fecha(res.created_at) }} - actualizado: {{ fecha(res.updated_at) }}
-        </p>
+        <ul>
+          <li v-if="res.topics && res.topics.length">
+            <strong>Topics: </strong>
+            <span v-for="(topic, index) in res.topics" :key="index">
+              {{ topic }}<span v-if="index < res.topics.length - 1">, </span>
+            </span>
+          </li>
+        </ul>
+        <p><strong>creado:</strong> {{ fecha(res.created_at) }} - <strong>actualizado:</strong> {{ fecha(res.updated_at) }}</p>
       <footer>
-        <lenguaje-icon v-if="res.language" :width="20" :height="20"></lenguaje-icon>{{ res.language }}
-         - 
-         <favorito-icon v-if="res.stargazers_count" :width="20" :height="20"></favorito-icon>{{ res.stargazers_count }} 
-         - 
-         <rama-icon v-if="res.forks_count" :width="20" :height="20"></rama-icon>{{ res.forks_count }} 
-         - 
-         <nota-icon v-if="res.open_issues_count" :width="20" :height="20"></nota-icon>{{ res.open_issues_count }} 
-         - 
-         <seguir-icon v-if="res.watchers_count" :width="20" :height="20"></seguir-icon>{{ res.watchers_count }}
+        <lenguaje-icon v-if="res.language" :width="20" :height="20" :titulo="'Lenguaje mas usado'"></lenguaje-icon>{{ res.language }}
+        <favorito-icon :width="20" :height="20" :titulo="'Favoritos'"></favorito-icon>{{ res.stargazers_count }} 
+        <rama-icon :width="20" :height="20" :titulo="'Bifurcaciones'"></rama-icon>{{ res.forks_count }} 
+        <nota-icon :width="20" :height="20" :titulo="'Incidencias'"></nota-icon>{{ res.open_issues_count }} 
+        <seguir-icon :width="20" :height="20" :titulo="'Seguidores'"></seguir-icon>{{ res.watchers_count }}
         <a
           v-if="res.owner.html_url"
           :href="res.owner.html_url"
@@ -43,6 +45,7 @@ export default {
           rel="noopener noreferrer"
         >
           <user-icon :width="20" :height="20"></user-icon>
+          <img :src="res.owner.avatar_url" :alt="res.owner.login" />
         </a>
       </footer>
     </article>

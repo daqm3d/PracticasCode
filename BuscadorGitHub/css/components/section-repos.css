@@ -31,12 +31,34 @@ section#repos {
       }
     }
     footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       a {
+        width: 33px;
+        height: 33px;
         display: inline-flex;
         padding: 5px;
         border-radius: 0.5rem;
         border: 1px solid var(--text-color);
         margin-left: auto;
+        img {
+          opacity: 0;
+          width: 20px;
+          transform: translateY(5px);
+          position: absolute;
+          /* Opcional: para evitar que ocupe espacio, usa position absolute si el layout lo permite */
+        }
+      }
+      a:hover {
+        img {
+          transform: translateY(0);
+          opacity: 1;
+          transition: opacity 0.1s, transform 0.3s;
+        }
+        svg {
+          display: none;
+        }
       }
     }
   }
