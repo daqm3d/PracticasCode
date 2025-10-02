@@ -1,7 +1,8 @@
-import Mapa from '../icons/mapa.js';
+import { fecha } from '../__api.js';
 import Proyecto from '../icons/proyecto.js';
 import Favorito from '../icons/favorito.js';
 import Email from '../icons/email.js';
+import Mapa from '../icons/mapa.js';
 import Blog from '../icons/blog.js';
 import X from '../icons/x.js';
 
@@ -96,11 +97,7 @@ export default {
   },
   methods: {
     fecha(data) {
-      const fecha = new Date(data);
-      const dia = fecha.getDate();
-      const mes = fecha.getMonth() + 1;
-      const anio = fecha.getFullYear();
-      return `${dia}/${mes}/${anio}`;
+      return fecha(data);
     },
   },
 };
