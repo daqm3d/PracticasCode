@@ -1,8 +1,43 @@
 section#repos {
   display: flex;
   position: relative;
+  grid-template-columns: 1fr;
   width: 100%;
   padding: 10px;
   border: 1px solid var(--text-color);
   align-items: center;
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      a {
+        font-size: 1.2em;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      span {
+        font-size: 0.9em;
+        padding: 3px 8px;
+        border-radius: 0.5rem;
+        border: 1px solid var(--text-color);
+        margin-left: auto;
+      }
+    }
+    footer {
+      a {
+        display: inline-flex;
+        padding: 5px;
+        border-radius: 0.5rem;
+        border: 1px solid var(--text-color);
+        margin-left: auto;
+      }
+    }
+  }
 }
