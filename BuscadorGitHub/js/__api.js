@@ -4,7 +4,7 @@
  * @param {string} search - El valor de búsqueda (por defecto es una cadena vacía).
  * @returns {Promise} - Promesa que resuelve con los resultados de la búsqueda.
  */
-
+// ? función principal para crear la busqueda en la API de GitHub
 export function category(params, search = '', page = 1) {
   const API = 'https://api.github.com/';
   let endpoint = '';
@@ -39,7 +39,7 @@ export function category(params, search = '', page = 1) {
 
   return buscarAPI(endpoint, API, params);
 }
-
+// ? función para llamar a la API de GitHub
 async function buscarAPI(endpoint, api, params) {
   try {
     const response = await fetch(api + endpoint);
@@ -65,6 +65,7 @@ async function buscarAPI(endpoint, api, params) {
     return Promise.reject({ message: `Error al realizar la búsqueda: ${data.message}` });
   }
 }
+// ? obtener datos completos de usuario
 export async function userAPI(resultado) {
   try {
     const resData = await Promise.all(
@@ -82,4 +83,12 @@ export async function userAPI(resultado) {
     console.log(data);
     return Promise.reject({ message: `Error al buscar usuarios: ${data.message}` });
   }
+}
+// ? convertir fecha a formato dd/mm/aaaa
+export function fecha(data) {
+  const fecha = new Date(data);
+  const dia = fecha.getDate();
+  const mes = fecha.getMonth() + 1;
+  const anio = fecha.getFullYear();
+  return `${dia}/${mes}/${anio}`;
 }
