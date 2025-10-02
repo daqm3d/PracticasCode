@@ -1,5 +1,5 @@
 export default {
-  props: ['width', 'height'],
+  props: ['width', 'height', 'titulo'],
   template: `
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ export default {
     stroke-width="1.3"
     viewBox="0 0 24 24"
   >
+    <title>{{ titulo }}</title>
     <path
       stroke="#000"
       stroke-linecap="round"

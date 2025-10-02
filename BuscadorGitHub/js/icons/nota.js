@@ -1,5 +1,5 @@
 export default {
-  props: ['width', 'height'],
+  props: ['width', 'height', 'titulo'],
   template: `
   <svg
     :width="width"
@@ -9,6 +9,7 @@ export default {
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
+  <title>{{ titulo }}</title>
     <path
       d="M7.5 22C10.5376 22 13 19.5376 13 16.5C13 13.4624 10.5376 11 7.5 11C4.46243 11 2 13.4624 2 16.5C2 17.5018 2.26783 18.441 2.7358 19.25L2.275 21.725L4.75 21.2642C5.55898 21.7322 6.49821 22 7.5 22Z"
       stroke="#000000"

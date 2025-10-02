@@ -17,7 +17,7 @@ export default {
           <h2>{{ res.name ? res.name : res.login }}</h2>
         </a>
         <span v-if="res.location">
-          <mapa-icon :width="20" :height="20"></mapa-icon>
+          <mapa-icon :width="20" :height="20" :titulo="'Ubicación'"></mapa-icon>
           {{ res.location }}
         </span>
       </header>

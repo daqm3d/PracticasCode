@@ -1,5 +1,5 @@
 export default {
-  props: ['width', 'height'],
+  props: ['width', 'height', 'titulo'],
   template: `
   <svg
   :width="width"
@@ -8,7 +8,8 @@ export default {
   viewBox="0 0 24 24"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
->
+  >
+  <title>{{ titulo }}</title>
   <path
     d="M12 7.01L12.01 6.99889"
     stroke="#000000"
