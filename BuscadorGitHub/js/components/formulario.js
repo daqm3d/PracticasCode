@@ -79,7 +79,7 @@ export default {
       try {
         const resultado = await category(this.data.params, this.data.search);
         console.log(resultado);
-        if (resultado.length === 0) {
+        if (!resultado || resultado.length === 0) {
           this.data.error = 'No se encontró resultados';
           return;
         }

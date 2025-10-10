@@ -16,7 +16,7 @@ export default {
   <footer id="result" class="result.result">
     <template  v-for="res in result.result" :key="res.id">
       <section-users v-if="result.busqueda === 'users'" :res="res" :busqueda="result.busqueda" ></section-users>
-      <section-repos v-if="result.busqueda === 'repos'" :res="res" :busqueda="result.busqueda" ></section-repos>
+      <section-repos v-if="result.busqueda === 'repos' || result.busqueda === 'topics'" :res="res" :busqueda="result.busqueda" ></section-repos>
     </template>
     <button :disabled="disabled" v-if="result.total > 10 && !result.error" @click="buscarMas">Cargar Más {{ result.busqueda }}</button>
     <output v-if="result.error"> {{ result.error }} </output>

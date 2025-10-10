@@ -19,19 +19,25 @@ export function category(params, search = '', page = 1) {
   // Determinar el endpoint según el tipo de búsqueda
   switch (params) {
     case 'users':
+      //? https://api.github.com/search/users?q=daqm3d busca por nombre de usuario
       endpoint = `search/users?q=${encodeURIComponent(term)}&page=${page}&per_page=${per_page}`;
-      /*endpoint = `search/users?q=${search}&page=1&per_page=20`; */
-
       break;
     case 'repos':
-      // https://api.github.com/search/repositories?q=daqm3d busca por nombre de repo
+      //? https://api.github.com/search/repositories?q=daqm3d busca por nombre de repo
       endpoint = `search/repositories?q=${encodeURIComponent(
         term
       )}&page=${page}&per_page=${per_page}`;
       break;
     case 'topics':
-      // "https://api.github.com/search/repositories?q=topic:machine-learning" buscar por etiqueta
-      endpoint = `search/repositories?q=topic:${encodeURIComponent(search)}`;
+      const data = term
+        .split(/\s*,\s*/) //* separa en comas, ignorando espacios alrededor
+        .map((s) => s.trim()) //* por si queda espacio
+        .filter(Boolean); //* elimina entradas vacías
+      //* codifica solo cada etiqueta y arma los qualifiers sin codificar los separators
+      const q = data.map((tag) => `${encodeURIComponent(tag)}`).join('+topic:');
+
+      //? "https://api.github.com/search/repositories?q=topic:read+topic:readme-md+topic:readme-template" buscar por etiqueta
+      endpoint = `search/repositories?q=topic:${q}&page=${page}&per_page=${per_page}`;
       break;
     default:
       return Promise.reject({ message: 'Tipo de búsqueda no válido' });
@@ -44,6 +50,7 @@ async function buscarAPI(endpoint, api, params) {
   try {
     const response = await fetch(api + endpoint);
     let resData = [];
+    console.log(response);
 
     if (!response.ok) {
       return Promise.reject(response);
@@ -55,7 +62,7 @@ async function buscarAPI(endpoint, api, params) {
       resData = await userAPI(data);
       return resData;
     }
-    if (params === 'repos') {
+    if (params === 'repos' || params === 'topics') {
       resData = data;
       return resData.items;
     }
