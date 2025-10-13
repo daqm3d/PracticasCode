@@ -1,5 +1,18 @@
 export default {
-  props: ['width', 'height', 'titulo'],
+  props: {
+    width: {
+      type: [String, Number],
+      default: '24',
+    },
+    height: {
+      type: [String, Number],
+      default: '24',
+    },
+    titulo: {
+      type: String,
+      default: 'Estrella de Favorito',
+    },
+  },
   template: `
   <svg
     xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,18 @@
 export default {
-  props: ['width', 'height', 'titulo'],
+  props: {
+    width: {
+      type: [String, Number],
+      default: '24',
+    },
+    height: {
+      type: [String, Number],
+      default: '24',
+    },
+    titulo: {
+      type: String,
+      default: 'Escaneo de Usuario',
+    },
+  },
   template: `
   <svg
     :width="width"
@@ -16,8 +29,6 @@ export default {
       stroke-width="1.3"
       stroke-linecap="round"
       stroke-linejoin="round"
-      style="--darkreader-inline-stroke: #000000;"
-      data-darkreader-inline-stroke=""
     ></path>
     <path
       d="M18 3H21V6"
@@ -25,8 +36,6 @@ export default {
       stroke-width="1.3"
       stroke-linecap="round"
       stroke-linejoin="round"
-      style="--darkreader-inline-stroke: #000000;"
-      data-darkreader-inline-stroke=""
     ></path>
     <path
       d="M6 21H3V18"
@@ -34,8 +43,6 @@ export default {
       stroke-width="1.3"
       stroke-linecap="round"
       stroke-linejoin="round"
-      style="--darkreader-inline-stroke: #000000;"
-      data-darkreader-inline-stroke=""
     ></path>
     <path
       d="M7 18V17C7 14.2386 9.23858 12 12 12V12C14.7614 12 17 14.2386 17 17V18"
@@ -43,8 +50,6 @@ export default {
       stroke-width="1.3"
       stroke-linecap="round"
       stroke-linejoin="round"
-      style="--darkreader-inline-stroke: #000000;"
-      data-darkreader-inline-stroke=""
     ></path>
     <path
       d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z"
@@ -52,8 +57,6 @@ export default {
       stroke-width="1.3"
       stroke-linecap="round"
       stroke-linejoin="round"
-      style="--darkreader-inline-stroke: #000000;"
-      data-darkreader-inline-stroke=""
     ></path>
     <path
       d="M18 21H21V18"
@@ -61,8 +64,6 @@ export default {
       stroke-width="1.3"
       stroke-linecap="round"
       stroke-linejoin="round"
-      style="--darkreader-inline-stroke: #000000;"
-      data-darkreader-inline-stroke=""
     ></path>
   </svg>`,
 };
