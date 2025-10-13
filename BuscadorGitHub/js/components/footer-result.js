@@ -4,7 +4,7 @@ import { category } from '../__api.js';
 
 export default {
   data() {
-    const [page, disabled] = [1, false];
+    const [page, disabled] = [2, false];
 
     return {
       page,
@@ -13,12 +13,12 @@ export default {
   },
   props: ['result'],
   template: `
-  <footer id="result" class="result.result">
+  <footer id="result">
     <template  v-for="res in result.result" :key="res.id">
       <section-users v-if="result.busqueda === 'users'" :res="res" :busqueda="result.busqueda" ></section-users>
       <section-repos v-if="result.busqueda === 'repos' || result.busqueda === 'topics'" :res="res" :busqueda="result.busqueda" ></section-repos>
     </template>
-    <button :disabled="disabled" v-if="result.total > 10 && !result.error" @click="buscarMas">Cargar Más {{ result.busqueda }}</button>
+    <button :disabled="disabled" v-if="result.total > 19 && !result.error" @click="buscarMas">Cargar Más {{ result.busqueda }}</button>
     <output v-if="result.error"> {{ result.error }} </output>
   </footer>`,
   components: {
@@ -36,14 +36,15 @@ export default {
   methods: {
     async buscarMas() {
       this.disabled = true;
-      this.page++;
       try {
         const resultado = await category(this.result.params, this.result.search, this.page);
         console.log(resultado);
         if (resultado.length === 0) {
           this.result.error = 'No se encontró resultados';
+          this.result.total = 0;
           return;
         }
+        this.page++;
         this.result.result.push(...resultado);
         console.log(this.result.result);
       } catch (error) {
