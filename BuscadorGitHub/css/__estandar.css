@@ -26,6 +26,7 @@ h3,
 h4 {
   font-family: 'Playfair Display Variable', serif;
   text-wrap: balance;
+  word-break: break-all;
 }
 time,
 p,
