@@ -86,9 +86,9 @@ export async function userAPI(resultado) {
     );
     return resData;
   } catch (error) {
-    const data = await error.json();
+    const data = await error?.json();
     console.log(data);
-    return Promise.reject({ message: `Error al buscar usuarios: ${data.message}` });
+    return Promise.reject({ message: `Error al buscar usuarios: ${data?.message}` });
   }
 }
 // ? convertir fecha a formato dd/mm/aaaa

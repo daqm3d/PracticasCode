@@ -36,8 +36,8 @@ header#favorites {
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
   section:hover::after {
-    opacity: 0; /* Oculto por defecto */
-    visibility: hidden; /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
   }
   section#usuarios::after {
     content: 'Usuarios'; /* El texto que quieres que aparezca */
