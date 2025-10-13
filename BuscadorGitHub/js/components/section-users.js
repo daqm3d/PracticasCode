@@ -24,7 +24,7 @@ export default {
       <p v-if="res.bio">{{ res.bio }}</p>
       <ul>
         <li v-if="res.created_at">
-          creado: {{ fecha(res.created_at) }} - actualizado: {{ fecha(res.updated_at) }}
+          creado: {{ formatearFecha(res.created_at) }} - actualizado: {{ formatearFecha(res.updated_at) }}
         </li>
         <div id="dataRedes">
           <li>
@@ -96,7 +96,7 @@ export default {
     }
   },
   methods: {
-    fecha(data) {
+    formatearFecha(data) {
       return fecha(data);
     },
   },

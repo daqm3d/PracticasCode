@@ -8,7 +8,16 @@ import Nota from '../icons/nota.js';
 import User from '../icons/user.js';
 
 export default {
-  props: ['res', 'busqueda'],
+  props: {
+    res: {
+      type: Object,
+      required: true,
+    },
+    busqueda: {
+      type: String,
+      required: true,
+    },
+  },
   template: `
   <section id="repos" v-if="res && (busqueda==='repos' || busqueda==='topics')">
     <article>
@@ -30,7 +39,7 @@ export default {
             </span>
           </li>
         </ul>
-        <p><strong>creado:</strong> {{ fecha(res.created_at) }} - <strong>actualizado:</strong> {{ fecha(res.updated_at) }}</p>
+        <p><strong>creado:</strong> {{ formatearFecha(res.created_at) }} - <strong>actualizado:</strong> {{  formatearFecha(res.updated_at) }}</p>
       <footer>
         <lenguaje-icon v-if="res.language" :width="20" :height="20" :titulo="'Lenguaje mas usado'"></lenguaje-icon>{{ res.language }}
         <favorito-icon :width="20" :height="20" :titulo="'Favoritos'"></favorito-icon>{{ res.stargazers_count }} 
@@ -45,7 +54,7 @@ export default {
           rel="noopener noreferrer"
         >
           <user-icon :width="20" :height="20"></user-icon>
-          <img :src="res.owner.avatar_url" :alt="res.owner.login" />
+          <img :src="res?.owner.avatar_url" :alt="res.owner.login" />
         </a>
       </footer>
     </article>
@@ -68,7 +77,7 @@ export default {
     }
   },
   methods: {
-    fecha(data) {
+    formatearFecha(data) {
       return fecha(data);
     },
   },
