@@ -17,6 +17,9 @@ section#users {
     header {
       display: flex;
       justify-content: space-between;
+      a {
+        max-width: 300px;
+      }
       span {
         display: flex;
         align-items: center;
