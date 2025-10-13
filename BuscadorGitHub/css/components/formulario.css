@@ -60,7 +60,7 @@ article#formulario {
         font-size: 14px;
         color: var(--text-color);
       }
-      input[type='button'] {
+      input[type='submit'] {
         background: var(--botton);
         font-weight: 500;
         font-size: 1.2rem;
