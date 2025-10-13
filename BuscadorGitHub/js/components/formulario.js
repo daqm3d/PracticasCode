@@ -27,7 +27,7 @@ export default {
   template: `
   <article id="formulario" class="formulario">
     <div class="content">
-      <form @submit.prevent>
+      <form @submit.prevent="buscar">
         <header>
           <h1 class="content_title">Buscador GitHub</h1>
         </header>
@@ -52,7 +52,7 @@ export default {
             </select>
             <label for="tipo">Tipo de Búsqueda </label>
           </div>
-          <input :data.disabled type="button" value="Buscar" @click="buscar" />
+          <input :disabled="data.disabled" type="submit" value="Buscar" />
         </section>
         <footer-result :result="data"></footer-result>
       </form>
