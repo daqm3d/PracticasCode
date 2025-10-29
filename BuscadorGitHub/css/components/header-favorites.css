@@ -16,10 +16,17 @@ header#favorites {
     white-space: nowrap;
     article {
       display: inline-block;
+      background: var(--conten-color);
+      cursor: pointer;
+      filter: grayscale(100%) opacity(0.7);
+      transition: filter 0.4s ease, opacity 0.4s ease;
       width: 50px;
       height: 50px;
       margin: 5px;
-      background: var(--conten-color);
+    }
+    article:hover {
+      box-shadow: 0 0 10px var(--conten-shadow);
+      filter: grayscale(0%) opacity(1);
     }
   }
   section::after {
