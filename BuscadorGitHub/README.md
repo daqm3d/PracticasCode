@@ -4,7 +4,7 @@
  <img valign="center"  width="900" src="./css/SVG/NotasApp.png" alt="NotasApp imagen" />
 -->
 
-Aplicación que permite buscar usuarios y repositorios en GitHub, mostrando perfil, lista de repositorios y enlaces directos mediante la API pública de GitHub.
+Aplicación que permite buscar usuarios y repositorios en GitHub usando como frace de busqueda el **Usuario**, **Repositorio** o **Etiquetas**, mostrando una lista detallada del perfil o el repositorio encontrado y enlaces directos mediante la API pública de GitHub.
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Books.webp" alt="Books" width="25" height="25" /> Lenguajes y Framework Usados
 
