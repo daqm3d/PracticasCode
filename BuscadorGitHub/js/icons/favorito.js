@@ -10,7 +10,7 @@ export default {
     },
     titulo: {
       type: String,
-      default: 'Estrella de Favorito',
+      default: null,
     },
   },
   template: `
@@ -22,7 +22,7 @@ export default {
     stroke-width="1.3"
     viewBox="0 0 24 24"
   >
-  <title>{{ titulo }}</title>
+  <title v-if="titulo">{{ titulo }}</title>
     <path
       style="--darkreader-inline-stroke: #000000"
       stroke="#000"

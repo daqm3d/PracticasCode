@@ -10,7 +10,7 @@ export default {
     },
     titulo: {
       type: String,
-      default: 'Branch',
+      default: null,
     },
   },
   template: `
@@ -22,7 +22,7 @@ export default {
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-  <title>{{ titulo }}</title>
+  <title v-if="titulo">{{ titulo }}</title>
     <path
       d="M17 7C18.1046 7 19 6.10457 19 5C19 3.89543 18.1046 3 17 3C15.8954 3 15 3.89543 15 5C15 6.10457 15.8954 7 17 7Z"
       stroke="#000000"

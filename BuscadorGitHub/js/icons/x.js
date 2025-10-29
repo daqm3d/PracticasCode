@@ -1,5 +1,18 @@
 export default {
-  props: ['width', 'height', 'titulo'],
+  props: {
+    width: {
+      type: [String, Number],
+      default: '24',
+    },
+    height: {
+      type: [String, Number],
+      default: '24',
+    },
+    titulo: {
+      type: String,
+      default: null,
+    },
+  },
   template: `
   <svg
     :width="width"
@@ -7,7 +20,7 @@ export default {
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
   >
-  <title>{{ titulo }}</title>
+  <title v-if="titulo">{{ titulo }}</title>
     <path
       d="M16.82 20.768 3.753 3.968A.6.6 0 0 1 4.227 3h2.48a.6.6 0 0 1 .473.232l13.067 16.8a.6.6 0 0 1-.474.968h-2.48a.6.6 0 0 1-.473-.232z"
       stroke="#000000"

@@ -10,7 +10,7 @@ export default {
     },
     titulo: {
       type: String,
-      default: 'Escaneo de Ojo',
+      default: null,
     },
   },
   template: `
@@ -22,7 +22,7 @@ export default {
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-  <title>{{ titulo }}</title>
+  <title v-if="titulo">{{ titulo }}</title>
     <path
       d="M6 3H3V6"
       stroke="#000000"
