@@ -18,7 +18,7 @@ export default {
       <section-users v-if="result.busqueda === 'users'" :res="res" :busqueda="result.busqueda" ></section-users>
       <section-repos v-if="result.busqueda === 'repos' || result.busqueda === 'topics'" :res="res" :busqueda="result.busqueda" ></section-repos>
     </template>
-    <button :disabled="disabled" v-if="result.total > 19 && !result.error" @click="buscarMas">Cargar Más {{ result.busqueda }}</button>
+    <button id="cargarMas" :disabled="disabled" v-if="result.total > 19 && !result.error" @click="buscarMas">Cargar Más {{ result.busqueda }}</button>
     <output v-if="result.error"> {{ result.error }} </output>
   </footer>`,
   components: {

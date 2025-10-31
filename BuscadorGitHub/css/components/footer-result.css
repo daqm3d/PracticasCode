@@ -7,16 +7,15 @@ footer#result {
   max-height: 400px;
   font-size: 12px;
   letter-spacing: 0.2rem;
-  button {
+  button#cargarMas {
     padding: 10px;
     border: none;
-    border-radius: 5px;
     background: transparent;
     font-size: 1rem;
     cursor: pointer;
     transition: 0.3s ease all;
   }
-  button:hover {
+  button#cargarMas:hover {
     font-weight: bold;
   }
   output {
