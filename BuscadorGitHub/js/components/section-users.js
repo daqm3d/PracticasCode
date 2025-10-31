@@ -5,6 +5,7 @@ import Email from '../icons/email.js';
 import Mapa from '../icons/mapa.js';
 import Blog from '../icons/blog.js';
 import X from '../icons/x.js';
+import Guardar from '../icons/guardar.js';
 
 export default {
   props: ['res', 'busqueda'],
@@ -44,6 +45,14 @@ export default {
             >
               <favorito-icon :width="20" :height="20"></favorito-icon>
             </button>
+            <button
+              v-if="res.name ? res.name : res.login"
+              type="button"
+              :title="'Guardar usuario: '+(res.name ? res.name : res.login)"
+              @click.prevent="guardar(res)"
+            >
+              <guardar-icon :width="20" :height="20"></guardar-icon>
+            </button>
           </li>
 
           <li>
@@ -81,6 +90,7 @@ export default {
   </section>`,
   components: {
     'mapa-icon': Mapa,
+    'guardar-icon': Guardar,
     'proyecto-icon': Proyecto,
     'favorito-icon': Favorito,
     'email-icon': Email,
@@ -95,9 +105,13 @@ export default {
       document.head.appendChild(link);
     }
   },
+  inject: ['guardarUsuario'],
   methods: {
     formatearFecha(data) {
       return fecha(data);
+    },
+    guardar(data) {
+      this.guardarUsuario(data, 'users');
     },
   },
 };

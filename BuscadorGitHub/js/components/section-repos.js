@@ -6,6 +6,7 @@ import Seguir from '../icons/seguir.js';
 import Rama from '../icons/rama.js';
 import Nota from '../icons/nota.js';
 import User from '../icons/user.js';
+import Guardar from '../icons/guardar.js';
 
 export default {
   props: {
@@ -46,6 +47,14 @@ export default {
         <rama-icon :width="20" :height="20" :titulo="'Bifurcaciones'"></rama-icon>{{ res.forks_count }} 
         <nota-icon :width="20" :height="20" :titulo="'Incidencias'"></nota-icon>{{ res.open_issues_count }} 
         <seguir-icon :width="20" :height="20" :titulo="'Seguidores'"></seguir-icon>{{ res.watchers_count }}
+        <button
+          v-if="res.name"
+          type="button"
+          :title="'Guardar repositorio: '+res.name"
+          @click.prevent="guardar(res)"
+        >
+          <guardar-icon :width="20" :height="20"></guardar-icon>
+        </button>
         <a
           v-if="res.owner.html_url"
           :href="res.owner.html_url"
@@ -67,6 +76,7 @@ export default {
     'rama-icon': Rama,
     'nota-icon': Nota,
     'user-icon': User,
+    'guardar-icon': Guardar,
   },
   beforeMount() {
     if (!document.querySelector('link[href="css/components/section-repos.css"]')) {
@@ -76,9 +86,13 @@ export default {
       document.head.appendChild(link);
     }
   },
+  inject: ['guardarRepo'],
   methods: {
     formatearFecha(data) {
       return fecha(data);
+    },
+    guardar(data) {
+      this.guardarRepo(data, 'repos');
     },
   },
 };
