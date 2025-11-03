@@ -61,12 +61,25 @@ export default {
   components: {
     'footer-result': footerResult,
   },
+  inject: ['favorites'],
   beforeMount() {
     if (!document.querySelector('link[href="css/components/formulario.css"]')) {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = 'css/components/formulario.css';
       document.head.appendChild(link);
+    }
+
+    // * Cargar favoritos desde localStorage al iniciar la aplicación
+    const storedFavorites = JSON.parse(localStorage.getItem('BuscadorGitHub_Favorites'));
+    if (storedFavorites && storedFavorites.favorites) {
+      this.favorites.users = storedFavorites.favorites.users || [];
+      this.favorites.repos = storedFavorites.favorites.repos || [];
+    } else {
+      localStorage.setItem(
+        'BuscadorGitHub_Favorites',
+        JSON.stringify({ favorites: { users: [], repos: [] } })
+      );
     }
   },
   methods: {

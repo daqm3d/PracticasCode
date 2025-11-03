@@ -13,6 +13,12 @@ const actualizarFavoritos = (data, tipo) => {
   console.log('Guardar data en favoritos:', tipo);
   if (!favorites[tipo].find((u) => u.id === data.id)) {
     favorites[tipo].push(data);
+    if (localStorage.getItem('BuscadorGitHub_Favorites')) {
+      localStorage.setItem(
+        'BuscadorGitHub_Favorites',
+        JSON.stringify({ favorites: { users: favorites.users, repos: favorites.repos } })
+      );
+    }
   }
 };
 
